@@ -1,2 +1,76 @@
-This is a collection of tools useful for a computational chemist,
-particularly doing spectroscopy related research.
+These are tools that might be useful to a computational chemist,
+especially one doing spectroscopy related things.
+
+All of my programs are designed to give helpful tips/reminders 
+about using them if run without any arguments (or at least I try for that)
+
+
+
+########
+# misc #
+########
+
+boltzman.f
+----------
+Generates the Boltzmann distribution on a set of N different conformers at a specified Temperature
+*Temperature in Kelvin
+*Energy in kJ/mol
+*Lowest conformer energy has to be (pre)set at 0
+
+
+#############
+# xyz-tools #
+#############
+
+cnc.f
+-----
+Generates the XYZ coordinates of the Center of Nuclear Charge. It uses a standard XYZ file as an argument
+*Works on elements 1-99
+*Elements are case sensitive, i.e. He not he or HE
+
+mv2cnc.f
+-----
+Same as cnc.f, but outputs an centered XYZ file "centered.xyz" (translation only, no rotation.
+*Works on elements 1-99
+*Elements are case sensitive, i.e. He not he or HE
+
+z-rotate
+--------
+I don't remember what this does, but I'm guessing it rotates an XYZ structure about the Z (0,0,1) axis.
+*???
+
+ligand.f
+--------
+Designed to take a lone bipy/phen ligand, calculate a normalized vector based upon the position of the 2 nitrogen atoms,
+translate all the atoms a certain distance along that vector, and rotate the compound a number of degree about that vector.
+*Distance in whatever units your XYZ is in
+*Amount of rotation should be given in Degrees
+
+
+#################
+# spectra-tools #
+#################
+
+sos.f90
+-------
+Calculates a Sum Over States for a CD calculation
+*???
+
+rot2zero.f90
+------------
+Calculates the running sum pf the rotatory strengths from a CD calculation.
+*???
+
+#########################
+# line-shape-generators #
+#########################
+
+antisymeterized-lorentzian-generator.f
+--------------------------------------
+Generates a linear combination of antisymmeterized Lorentzian 
+functions and its corresponding Hilbert transform pair
+
+lorentzian-generator.f
+--------------------------------------
+Generates a linear combination of Lorentzian functions and its corresponding Hilbert transform pair
+
