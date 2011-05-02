@@ -7,6 +7,11 @@ FC=gfortran
 WORK_DIR=`pwd`
 BIN_DIR=$WORK_DIR/bin
 
+# Create the bin dir if not present
+if [ ! -d $BIN_DIR ]; then
+        mkdir $BIN_DIR
+fi
+
 function build-tools {
 	cd $WORK_DIR/$1
 	# Take care of any *.f files
